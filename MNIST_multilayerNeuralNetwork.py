@@ -31,8 +31,8 @@ class MNIST_Logistic_Regression(nn.Module):
 
 
 # Load the data
-mnist_train = datasets.MNIST(root="./datasets", train=True, transform=transforms.ToTensor())
-mnist_test = datasets.MNIST(root="./datasets", train=False, transform=transforms.ToTensor())
+mnist_train = datasets.MNIST(root="./datasets", train=True, transform=transforms.ToTensor(), download=True)
+mnist_test = datasets.MNIST(root="./datasets", train=False, transform=transforms.ToTensor(), download=True)
 train_loader = torch.utils.data.DataLoader(mnist_train, batch_size=100, shuffle=True)
 test_loader = torch.utils.data.DataLoader(mnist_test, batch_size=100, shuffle=False)
 
